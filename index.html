@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Procesador de Números</title>
+</head>
+<body>
+    <h1>Ingresa tus números</h1>
+    <input type="text" id="numeros" placeholder="Ingresa tus números, separados por comas">
+    <button onclick="procesarNumeros()">Procesar los números</button>
+
+    <script>
+        function procesarNumeros() {
+            let input = document.getElementById('numeros').value;
+            let numeros = input.split(',');
+            let resultado = [];
+            for (let i = 0; i < numeros.length; i++) {
+                let numeroStr = numeros[i].trim();
+                if (numeroStr[0] === numeroStr[numeroStr.length - 1]) {
+                    resultado.push(numeros[i]);
+                }
+            }
+            alert("Los números que comienzan y terminan con el mismo dígito son: " + resultado.join(', '));
+        }
+    </script>
+</body>
+</html>
+<!-- NOTA: los codigos (html y javascript) los hice en el mismo archivo pq si los hacia por separado no lograba hacer que funcionara-->
